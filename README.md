@@ -24,12 +24,15 @@ Or install it yourself as:
 
 Tüm döviz verilerini almak için;
 
-    $ result = TcmbExchange.get
 ```ruby
+result = TcmbExchange.get
+
 =>{"ABD DOLARI"=>{"Birim"=>"1", "Alış"=>4.5304, "Satış"=>4.5385}, "AVUSTRALYA DOLARI"=>{"Birim"=>"1", "Alış"=>3.378, "Satış"=>3.4}, "DANİMARKA KRONU"=>{"Birim"=>"1", "Alış"=>0.71444, "Satış"=>0.71795}, "EURO"=>{"Birim"=>"1", "Alış"=>5.3334, "Satış"=>5.343}, "İNGİLİZ STERLİNİ"=>{"Birim"=>"1", "Alış"=>6.0311, "Satış"=>6.0625}, "İSVİÇRE FRANGI"=>{"Birim"=>"1", "Alış"=>4.5774, "Satış"=>4.6068}, "İSVEÇ KRONU"=>{"Birim"=>"1", "Alış"=>0.51869, "Satış"=>0.52406}, "KANADA DOLARI"=>{"Birim"=>"1", "Alış"=>3.4588, "Satış"=>3.4744}, "KUVEYT DİNARI"=>{"Birim"=>"1", "Alış"=>14.8996, "Satış"=>15.0945}, "NORVEÇ KRONU"=>{"Birim"=>"1", "Alış"=>0.5649, "Satış"=>0.5687}, "SUUDİ ARABİSTAN RİYALİ"=>{"Birim"=>"1", "Alış"=>1.208, "Satış"=>1.2102}, "JAPON YENİ"=>{"Birim"=>"100", "Alış"=>4.0918, "Satış"=>4.1189}, "BULGAR LEVASI"=>{"Birim"=>"1", "Alış"=>2.7113, "Satış"=>2.7468}, "RUMEN LEYİ"=>{"Birim"=>"1", "Alış"=>1.1382, "Satış"=>1.1531}, "RUS RUBLESİ"=>{"Birim"=>"1", "Alış"=>0.07176, "Satış"=>0.0727}, "İRAN RİYALİ"=>{"Birim"=>"100", "Alış"=>0.01049, "Satış"=>0.01063}, "ÇİN YUANI"=>{"Birim"=>"1", "Alış"=>0.68067, "Satış"=>0.68958}, "PAKİSTAN RUPİSİ"=>{"Birim"=>"1", "Alış"=>0.03701, "Satış"=>0.03749}, "KATAR RİYALİ"=>{"Birim"=>"1", "Alış"=>1.2369, "Satış"=>1.2531}}
+
 ```    
 ```ruby
 result = TcmbExchange.get
+
 result.keys.each do |k|
   br = result[k].keys.first
   al = result[k].keys[1]
@@ -63,9 +66,11 @@ Yukarıdaki kodun çıktısı:
 
 Belirli bir dövizi almak için;
 
-    $ result = TcmbExchange.get_by_code "USD"
 ```ruby
-    => {"ABD DOLARI"=>{"Birim"=>"1", "Alış"=>4.5304, "Satış"=>4.5385}}
+result = TcmbExchange.get_by_code "USD"
+
+=> {"ABD DOLARI"=>{"Birim"=>"1", "Alış"=>4.5304, "Satış"=>4.5385}}
+
 ```    
 
 ### Döviz Kodları :
@@ -93,10 +98,10 @@ Belirli bir dövizi almak için;
 Türk lirasına döviz dönüşümü yapmak için;
 
 ```ruby
-  TcmbExchange.exchange "USD", 15
+TcmbExchange.exchange "USD", 15
 
   => {"ABD DOLARI"=>{"Birim"=>15, "Alış"=>67.956, "Satış"=>68.0775}}
-  
+
 ```    
 
 

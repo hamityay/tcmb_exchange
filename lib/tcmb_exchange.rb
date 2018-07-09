@@ -51,6 +51,15 @@ module TcmbExchange
   end
 
   def self.exchange(kod, miktar)
+    kod.upcase!
+    check = %w[USD AUD DKK EUR GBP CHF SEK CAD KWD NOK SAR JPY BGN RON RUB IRR CNY PKR QAR]
+    return "Yanlış kod kullandınız." unless check.include? kod
+    begin
+      miktar = Integer(miktar)
+    rescue => error
+      return "Miktar Integer tipinden olmalı. Yani sadece rakalardan oluşmalı."
+    end
+    
     begin
       d = open("http://www.tcmb.gov.tr/kurlar/today.xml", 'User-Agent' => "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.62 Safari/537.36")
 
