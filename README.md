@@ -100,10 +100,23 @@ Türk lirasına döviz dönüşümü yapmak için;
 ```ruby
 TcmbExchange.exchange "USD", 15
 
-  => {"ABD DOLARI"=>{"Birim"=>15, "Alış"=>67.956, "Satış"=>68.0775}}
+=> {"ABD DOLARI"=>{"Birim"=>15, "Alış"=>67.956, "Satış"=>68.0775}}
 
 ```    
 
+```ruby
+TcmbExchange.exchange "usd", 10.3
+
+=> {"ABD DOLARI"=>{"Birim"=>10.3, "Alış"=>46.663120000000006, "Satış"=>46.746550000000006}}
+
+```    
+
+```ruby
+TcmbExchange.exchange "usd", "20,7"
+
+=> {"ABD DOLARI"=>{"Birim"=>20.7, "Alış"=>93.77928, "Satış"=>93.94695}}
+
+```
 
 ## Contributing
 

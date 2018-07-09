@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    tcmb_exchange (0.2.1)
+    tcmb_exchange (0.2.2)
       nokogiri (>= 1.8.0)
 
 GEM

@@ -54,12 +54,13 @@ module TcmbExchange
     kod.upcase!
     check = %w[USD AUD DKK EUR GBP CHF SEK CAD KWD NOK SAR JPY BGN RON RUB IRR CNY PKR QAR]
     return "Yanlış kod kullandınız." unless check.include? kod
+    miktar.to_s.gsub!(",",".") if miktar.to_s.include? ","
     begin
-      miktar = Integer(miktar)
+      miktar = Float(miktar)
     rescue => error
-      return "Miktar Integer tipinden olmalı. Yani sadece rakalardan oluşmalı."
+      return "Miktar sayı veya ondalıklı sayı olamalı."
     end
-    
+
     begin
       d = open("http://www.tcmb.gov.tr/kurlar/today.xml", 'User-Agent' => "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.62 Safari/537.36")
 
@@ -70,9 +71,9 @@ module TcmbExchange
       name = c.css("Isim").to_s.gsub("/","").gsub("<Isim>","")
       code = c.css("CurrencyCode").to_s.gsub("/","").gsub("<CurrencyCode>","")
       unit = c.css("Unit").to_s.gsub("/","").gsub("<Unit>","")
-      al = miktar.to_i / unit.to_i * (c.css("ForexBuying").to_s.gsub("/","").gsub("<ForexBuying>","").to_f)
-      sat = miktar.to_i / unit.to_i * (c.css("ForexSelling").to_s.gsub("/","").gsub("<ForexSelling>","").to_f)
-      currency[name] = { "Birim" => miktar.to_i, "Alış" => al, "Satış" => sat }
+      al = miktar / unit.to_i * (c.css("ForexBuying").to_s.gsub("/","").gsub("<ForexBuying>","").to_f)
+      sat = miktar / unit.to_i * (c.css("ForexSelling").to_s.gsub("/","").gsub("<ForexSelling>","").to_f)
+      currency[name] = { "Birim" => miktar, "Alış" => al, "Satış" => sat }
       return currency
     rescue => error
       msg = "Hata oluştu. Lütfen github sayfasında, hangi durumda hatanın oluştuğunu belirten issue açınız."
