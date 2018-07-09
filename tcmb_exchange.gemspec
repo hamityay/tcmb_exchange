@@ -8,10 +8,13 @@ Gem::Specification.new do |spec|
   spec.version       = TcmbExchange::VERSION
   spec.authors       = ["hamityay"]
   spec.email         = ["hamityay@hotmail.com"]
+  spec.add_runtime_dependency "nokogiri",
+    [">= 1.8.0"]
 
-  spec.summary       = %q{TODO: Write a short summary, because RubyGems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{Anlık olarak tcmb.gov.tr üzerinden döviz kurlarını almanızı sağlar. TCMB tcmb_currency}
+  spec.description   = %q{http://www.tcmb.gov.tr/kurlar/today.xml adreasindeki verileri dinamik olarak almanızı sağlar.TCMB tcmb_currency}
+  spec.homepage      = "https://rubygems.org/gems/tcmb_exchange"
+  spec.metadata      = { "source_code_uri" => "https://github.com/hamityay/tcmb_exchange" }
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
@@ -19,7 +22,7 @@ Gem::Specification.new do |spec|
   if spec.respond_to?(:metadata)
     spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
   else
-    raise "RubyGems 2.0 or newer is required to protect against " \
+    raise "RubyGems 2.1 or newer is required to protect against " \
       "public gem pushes."
   end
 
