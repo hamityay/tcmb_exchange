@@ -90,6 +90,16 @@ Belirli bir dövizi almak için;
 18. PKR -> PAKİSTAN RUPİSİ
 19. QAR -> KATAR RİYALİ
 
+Türk lirasına döviz dönüşümü yapmak için;
+
+```ruby
+  TcmbExchange.exchange "USD", 15
+
+  => {"ABD DOLARI"=>{"Birim"=>15, "Alış"=>67.956, "Satış"=>68.0775}}
+  
+```    
+
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/hamityay/tcmb_exchange.
