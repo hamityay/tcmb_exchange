@@ -22,7 +22,7 @@ Or install it yourself as:
 
     $ require "tcmb_exchange"
 
-Tüm döviz verilerini almak için;
+### Tüm döviz verilerini almak için;
 
 ```ruby
 result = TcmbExchange.get
@@ -64,7 +64,7 @@ Yukarıdaki kodun çıktısı:
 1 birim KATAR RİYALİ için alış: 1.2369, satış: 1.2531 TL.
 ```    
 
-Belirli bir dövizi almak için;
+### Belirli bir dövizi almak için;
 
 ```ruby
 result = TcmbExchange.get_by_code "USD"
@@ -73,7 +73,7 @@ result = TcmbExchange.get_by_code "USD"
 
 ```    
 
-### Döviz Kodları :
+#### Döviz Kodları :
 
 1.  USD -> ABD DOLARI
 2.  AUD -> AVUSTRALYA DOLARI
@@ -95,7 +95,7 @@ result = TcmbExchange.get_by_code "USD"
 18. PKR -> PAKİSTAN RUPİSİ
 19. QAR -> KATAR RİYALİ
 
-Türk lirasına döviz dönüşümü yapmak için;
+### Türk lirasına döviz dönüşümü yapmak için (TL Karşılığı);
 
 ```ruby
 TcmbExchange.exchange "USD", 15
