@@ -118,6 +118,29 @@ TcmbExchange.exchange "usd", "20,7"
 
 ```
 
+### Döviz dönüşümü yapmak için;
+
+```ruby
+TcmbExchange.exchange_to 175, "usd", "eur"
+
+=> {"ABD DOLARI"=>{"Birim"=>175.0, "Alış"=>150.57291666666669, "Satış"=>150.57278594478308, "Sonuç"=>"175.0 ABD DOLARI içim alış fiyatı 150.57291666666669 EURO, satış fiyatı 150.57278594478308 EURO."}}
+
+```    
+
+```ruby
+TcmbExchange.exchange_to 5000, "jpy", "eur"
+
+=> {"JAPON YENİ"=>{"Birim"=>5000.0, "Alış"=>37.97593390804598, "Satış"=>38.158838293295084, "Sonuç"=>"5000.0 JAPON YENİ içim alış fiyatı 37.97593390804598 EURO, satış fiyatı 38.158838293295084 EURO."}}
+
+```    
+
+```ruby
+TcmbExchange.exchange_to "175,7", "gbp", "eur"
+
+=> {"İNGİLİZ STERLİNİ"=>{"Birim"=>175.7, "Alış"=>196.92726113505748, "Satış"=>197.59792757260664, "Sonuç"=>"175.7 İNGİLİZ STERLİNİ içim alış fiyatı 196.92726113505748 EURO, satış fiyatı 197.59792757260664 EURO."}}
+
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/hamityay/tcmb_exchange.
