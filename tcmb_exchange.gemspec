@@ -15,7 +15,7 @@ Gem::Specification.new do |spec|
   spec.description   = %q{http://www.tcmb.gov.tr/kurlar/today.xml adreasindeki verileri dinamik olarak almanızı sağlar.TCMB tcmb_currency}
   spec.homepage      = "https://rubygems.org/gems/tcmb_exchange"
   spec.metadata      = { "source_code_uri" => "https://github.com/hamityay/tcmb_exchange" }
-  spec.license       = "MIT"
+  spec.license       = "GPL-3.0"
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
