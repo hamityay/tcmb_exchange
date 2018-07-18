@@ -13,7 +13,6 @@ module TcmbExchange
       parsed.css("Currency").each do |c|
         name = c.css("Isim").to_s.gsub("/","").gsub("<Isim>","")
         next if name.include? "SDR"
-        code = c.css("CurrencyCode").to_s.gsub("/","").gsub("<CurrencyCode>","")
         unit = c.css("Unit").to_s.gsub("/","").gsub("<Unit>","")
         al = c.css("ForexBuying").to_s.gsub("/","").gsub("<ForexBuying>","").to_f
         sat = c.css("ForexSelling").to_s.gsub("/","").gsub("<ForexSelling>","").to_f
@@ -38,7 +37,6 @@ module TcmbExchange
       c = parsed.css("Currency[Kod=#{kod}]").first
 
       name = c.css("Isim").to_s.gsub("/","").gsub("<Isim>","")
-      code = c.css("CurrencyCode").to_s.gsub("/","").gsub("<CurrencyCode>","")
       unit = c.css("Unit").to_s.gsub("/","").gsub("<Unit>","")
       al = c.css("ForexBuying").to_s.gsub("/","").gsub("<ForexBuying>","").to_f
       sat = c.css("ForexSelling").to_s.gsub("/","").gsub("<ForexSelling>","").to_f
@@ -69,7 +67,6 @@ module TcmbExchange
       c = parsed.css("Currency[Kod=#{kod}]").first
 
       name = c.css("Isim").to_s.gsub("/","").gsub("<Isim>","")
-      code = c.css("CurrencyCode").to_s.gsub("/","").gsub("<CurrencyCode>","")
       unit = c.css("Unit").to_s.gsub("/","").gsub("<Unit>","")
       al = miktar / unit.to_i * (c.css("ForexBuying").to_s.gsub("/","").gsub("<ForexBuying>","").to_f)
       sat = miktar / unit.to_i * (c.css("ForexSelling").to_s.gsub("/","").gsub("<ForexSelling>","").to_f)
