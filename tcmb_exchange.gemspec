@@ -8,11 +8,11 @@ Gem::Specification.new do |spec|
   spec.version       = TcmbExchange::VERSION
   spec.authors       = ["hamityay"]
   spec.email         = ["hamityay@hotmail.com"]
-  spec.add_runtime_dependency "nokogiri",
-    [">= 1.8.0"]
+  spec.add_runtime_dependency 'nokogiri',
+    '~> 1.10', '>= 1.10.4'
 
-  spec.summary       = %q{Anlık olarak tcmb.gov.tr üzerinden döviz kurlarını almanızı sağlar. TCMB tcmb_currency}
-  spec.description   = %q{http://www.tcmb.gov.tr/kurlar/today.xml adreasindeki verileri dinamik olarak almanızı sağlar.TCMB tcmb_currency}
+  spec.summary       = %q{To get currency values instantly from tcmb.gov.tr. TCMB tcmb_currency}
+  spec.description   = %q{Get values from http://www.tcmb.gov.tr/kurlar/today.xml dynamically.TCMB tcmb_currency}
   spec.homepage      = "https://rubygems.org/gems/tcmb_exchange"
   spec.metadata      = { "source_code_uri" => "https://github.com/hamityay/tcmb_exchange" }
   spec.license       = "GPL-3.0"
@@ -26,6 +26,6 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_development_dependency "bundler", "~> 1.16"
-  spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency 'bundler', '~> 2.0', '>= 2.0.2'
+  spec.add_development_dependency 'rake', '~> 12.3', '>= 12.3.3'
 end
