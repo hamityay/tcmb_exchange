@@ -1,31 +1,31 @@
-
-lib = File.expand_path("../lib", __FILE__)
+# TCMB Currency Gem specifications
+lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "tcmb_exchange/version"
+require 'tcmb_exchange/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "tcmb_exchange"
+  spec.name          = 'tcmb_exchange'
   spec.version       = TcmbExchange::VERSION
-  spec.authors       = ["hamityay"]
-  spec.email         = ["hamityay@hotmail.com"]
+  spec.authors       = ['hamityay']
+  spec.email         = ['hamityay@hotmail.com']
   spec.add_runtime_dependency 'nokogiri',
-    '~> 1.10', '>= 1.10.4'
+                              '~> 1.10', '>= 1.10.8'
 
-  spec.summary       = %q{To get currency values instantly from tcmb.gov.tr. TCMB tcmb_currency}
-  spec.description   = %q{Get values from http://www.tcmb.gov.tr/kurlar/today.xml dynamically.TCMB tcmb_currency}
-  spec.homepage      = "https://rubygems.org/gems/tcmb_exchange"
-  spec.metadata      = { "source_code_uri" => "https://github.com/hamityay/tcmb_exchange" }
-  spec.license       = "GPL-3.0"
+  spec.summary       = %q(To get currency values instantly from tcmb.gov.tr. TCMB tcmb_currency)
+  spec.description   = %q(Get values from http://www.tcmb.gov.tr/kurlar/today.xml dynamically.TCMB tcmb_currency)
+  spec.homepage      = 'https://rubygems.org/gems/tcmb_exchange'
+  spec.metadata      = { "source_code_uri" => 'https://github.com/hamityay/tcmb_exchange' }
+  spec.license       = 'GPL-3.0'
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
-  spec.files         = Dir.chdir(File.expand_path('..', __FILE__)) do
+  spec.files         = Dir.chdir(File.expand_path(__dir__)) do
     `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   end
-  spec.bindir        = "exe"
+  spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib"]
+  spec.require_paths = ['lib']
 
-  spec.add_development_dependency 'bundler', '~> 2.0', '>= 2.0.2'
-  spec.add_development_dependency 'rake', '~> 12.3', '>= 12.3.3'
+  spec.add_development_dependency 'bundler', '~> 2.1', '>= 2.1.4'
+  spec.add_development_dependency 'rake', '~> 13.0', '>= 13.0.1'
 end
