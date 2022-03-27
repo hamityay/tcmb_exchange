@@ -1,18 +1,18 @@
 PATH
   remote: .
   specs:
-    tcmb_exchange (0.5.0)
+    tcmb_exchange (0.6.0)
       nokogiri (~> 1.10, >= 1.10.8)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    mini_portile2 (2.5.0)
-    nokogiri (1.11.1)
-      mini_portile2 (~> 2.5.0)
+    mini_portile2 (2.8.0)
+    nokogiri (1.13.3)
+      mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
-    racc (1.5.2)
-    rake (13.0.1)
+    racc (1.6.0)
+    rake (13.0.6)
 
 PLATFORMS
   ruby
@@ -23,4 +23,4 @@ DEPENDENCIES
   tcmb_exchange!
 
 BUNDLED WITH
-   2.1.4
+   2.3.7
